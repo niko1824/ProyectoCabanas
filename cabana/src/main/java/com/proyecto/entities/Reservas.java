@@ -27,7 +27,7 @@ public class Reservas implements Serializable {
     @ManyToOne
     @JoinColumn(name = "cabana_id")
     @JsonIgnoreProperties("reservation")
-    private Cabana cabana;
+    private Cabana cabin;
 
     @ManyToOne
     @JoinColumn(name= "category_id")
@@ -43,9 +43,7 @@ public class Reservas implements Serializable {
     private Score score;
 
 
-    public Integer getIdReservation() {
-        return idReservation;
-    }
+
 
     public Date getStartDate() {
         return startDate;
@@ -55,9 +53,7 @@ public class Reservas implements Serializable {
         return devolutionDate;
     }
 
-    public void setIdReservation(Integer idReservation) {
-        this.idReservation = idReservation;
-    }
+
 
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
@@ -90,15 +86,27 @@ public class Reservas implements Serializable {
         return status;
     }
 
-    public Cabana getCabana() {
-        return cabana;
-    }
+
 
     public void setStatus(String status) {
         this.status = status;
     }
 
-    public void setCabana(Cabana cabana) {
-        this.cabana = cabana;
+
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Cabana getCabin() {
+        return cabin;
+    }
+
+    public void setCabin(Cabana cabin) {
+        this.cabin = cabin;
     }
 }

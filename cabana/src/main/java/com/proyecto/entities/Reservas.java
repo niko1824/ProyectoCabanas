@@ -43,7 +43,9 @@ public class Reservas implements Serializable {
     private Score score;
 
 
-
+    public Integer getIdReservation() {
+        return idReservation;
+    }
 
     public Date getStartDate() {
         return startDate;
@@ -53,7 +55,9 @@ public class Reservas implements Serializable {
         return devolutionDate;
     }
 
-
+    public void setIdReservation(Integer idReservation) {
+        this.idReservation = idReservation;
+    }
 
     public void setStartDate(Date startDate) {
         this.startDate = startDate;

@@ -28,11 +28,11 @@ public class ReservasService {
 
     public Reservas save(Reservas p){
 
-        if (p.getIdReserva()==null){
+        if (p.getIdReservation()==null){
             return reservasRepository.save(p);
         }else {
 
-            Optional<Reservas> e = reservasRepository.getReservas(p.getIdReserva());
+            Optional<Reservas> e = reservasRepository.getReservas(p.getIdReservation());
             if (e.isPresent()){
                 return p;
             }else {
@@ -43,24 +43,24 @@ public class ReservasService {
 
     public Reservas update (Reservas p){
 
-        if(p.getIdReserva()!= null){
+        if(p.getIdReservation()!= null){
 
-            Optional<Reservas> q = reservasRepository.getReservas(p.getIdReserva());
+            Optional<Reservas> q = reservasRepository.getReservas(p.getIdReservation());
             if (q.isPresent()){
-                if (p.getIdReserva()!=null){
-                    q.get().setIdReserva(p.getIdReserva());
+                if (p.getIdReservation()!=null){
+                    q.get().setIdReservation(p.getIdReservation());
                 }
                 if (p.getCabana()!=null){
                     q.get().setCabana(p.getCabana());
                 }
-                if (p.getCliente()!=null){
-                    q.get().setCliente(p.getCliente());
+                if (p.getClient()!=null){
+                    q.get().setClient(p.getClient());
                 }
-                if (p.getFechainicio()!=null){
-                    q.get().setFechainicio(p.getFechainicio());
+                if (p.getStartDate()!=null){
+                    q.get().setStartDate(p.getStartDate());
                 }
-                if (p.getFechafin()!=null){
-                    q.get().setFechafin(p.getFechafin());
+                if (p.getDevolutionDate()!=null){
+                    q.get().setDevolutionDate(p.getDevolutionDate());
                 }
                 reservasRepository.save(q.get());
                 return q.get();

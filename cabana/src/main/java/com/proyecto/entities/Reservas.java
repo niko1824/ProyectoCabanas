@@ -33,7 +33,7 @@ public class Reservas implements Serializable {
     @JsonIgnoreProperties({"reservas","client"})
     private Category category;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cabin")
+    @ManyToOne
     @JsonIgnoreProperties({"cabin", "client"})
     private List<Message> messages;
     @ManyToOne

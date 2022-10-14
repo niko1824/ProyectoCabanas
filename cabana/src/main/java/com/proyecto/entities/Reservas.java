@@ -16,8 +16,6 @@ public class Reservas implements Serializable {
     private Integer idReservation;
 
 
-
-
     private Date startDate;
 
     private Date devolutionDate;
@@ -27,18 +25,18 @@ public class Reservas implements Serializable {
     @ManyToOne
     @JoinColumn(name = "cabana_id")
     @JsonIgnoreProperties("reservation")
-    private Cabana cabin;
+    private Cabana cabana;
 
     @ManyToOne
-    @JoinColumn(name= "category_id")
+    @JoinColumn(name = "category_id")
     @JsonIgnoreProperties("reservation")
     private Category category;
     @ManyToOne
     @JoinColumn(name = "client_id")
-    @JsonIgnoreProperties({"reservas","messages"})
+    @JsonIgnoreProperties({"reservas", "messages"})
     private Client client;
 
-    @OneToOne(cascade = {CascadeType.REMOVE},mappedBy = "reservas")
+    @OneToOne(cascade = {CascadeType.REMOVE}, mappedBy = "reservas")
     @JsonIgnoreProperties("reserva")
     private Score score;
 
@@ -77,7 +75,6 @@ public class Reservas implements Serializable {
     }
 
 
-
     public void setClient(Client client) {
         this.client = client;
     }
@@ -91,11 +88,9 @@ public class Reservas implements Serializable {
     }
 
 
-
     public void setStatus(String status) {
         this.status = status;
     }
-
 
 
     public Category getCategory() {
@@ -106,11 +101,11 @@ public class Reservas implements Serializable {
         this.category = category;
     }
 
-    public Cabana getCabin() {
-        return cabin;
+    public Cabana getCabana() {
+        return cabana;
     }
 
-    public void setCabin(Cabana cabin) {
-        this.cabin = cabin;
+    public void setCabana(Cabana cabana) {
+        this.cabana = cabana;
     }
 }

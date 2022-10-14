@@ -26,7 +26,7 @@ public class Reservas implements Serializable {
     @ManyToOne
     @JoinColumn(name = "cabana_id")
     @JsonIgnoreProperties({"reservations","client"})
-    private Cabana cabana;
+    private Cabin cabin;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
@@ -106,12 +106,12 @@ public class Reservas implements Serializable {
         this.category = category;
     }
 
-    public Cabana getCabana() {
-        return cabana;
+    public Cabin getCabin() {
+        return cabin;
     }
 
-    public void setCabana(Cabana cabana) {
-        this.cabana = cabana;
+    public void setCabin(Cabin cabin) {
+        this.cabin = cabin;
     }
 
     public List<Message> getMessages() {

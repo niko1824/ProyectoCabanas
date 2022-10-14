@@ -1,7 +1,7 @@
 package com.proyecto.service;
 
 
-import com.proyecto.entities.Cabana;
+import com.proyecto.entities.Cabin;
 import com.proyecto.repository.CabanaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,22 +15,22 @@ public class CabanaService {
     @Autowired
     private CabanaRepository cabanaRepository;
 
-    public List<Cabana> getALL(){
+    public List<Cabin> getALL(){
 
         return cabanaRepository.getALL();
     }
 
-    public Optional<Cabana> getCabana(int id){
+    public Optional<Cabin> getCabana(int id){
 
         return cabanaRepository.getCabana(id);
     }
 
-    public Cabana save(Cabana p){
+    public Cabin save(Cabin p){
 
         if (p.getId()==null){
             return cabanaRepository.save(p);
         }else {
-            Optional<Cabana> e = cabanaRepository.getCabana(p.getId());
+            Optional<Cabin> e = cabanaRepository.getCabana(p.getId());
             if (e.isPresent()){
                 return p;
             }else {
@@ -39,10 +39,10 @@ public class CabanaService {
         }
     }
 
-    public Cabana update(Cabana p){
+    public Cabin update(Cabin p){
 
         if (p.getId()!=null){
-            Optional<Cabana> q = cabanaRepository.getCabana(p.getId());
+            Optional<Cabin> q = cabanaRepository.getCabana(p.getId());
             if (q.isPresent()){
                 if (p.getName()!= null){
                     q.get().setName(p.getName());
@@ -73,7 +73,7 @@ public class CabanaService {
     public boolean delete(int id){
 
         boolean flag = false;
-        Optional<Cabana> p = cabanaRepository.getCabana(id);
+        Optional<Cabin> p = cabanaRepository.getCabana(id);
         if(p.isPresent()){
             cabanaRepository.delete(p.get());
             flag = true;

@@ -1,7 +1,7 @@
 package com.proyecto.controller;
 
 
-import com.proyecto.entities.Cabana;
+import com.proyecto.entities.Cabin;
 import com.proyecto.service.CabanaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,14 +17,14 @@ public class CabanaController {
     private CabanaService cabanaService;
 
     @GetMapping("/all")
-    public List<Cabana> getALL(){
+    public List<Cabin> getALL(){
 
         return cabanaService.getALL();
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Cabana save(@RequestBody Cabana p){
+    public Cabin save(@RequestBody Cabin p){
 
         return cabanaService.save(p);
     }

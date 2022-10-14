@@ -1,9 +1,8 @@
 package com.proyecto.repository;
 
 
-import com.proyecto.entities.Cabana;
+import com.proyecto.entities.Cabin;
 import com.proyecto.repository.crudRepository.CabanaCrudRepository;
-import com.proyecto.repository.crudRepository.ScoreCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -16,22 +15,22 @@ public class CabanaRepository {
     @Autowired
     private CabanaCrudRepository cabanaCrudRepository;
 
-    public List<Cabana> getALL(){
+    public List<Cabin> getALL(){
 
-        return  (List<Cabana>) cabanaCrudRepository.findAll();
+        return  (List<Cabin>) cabanaCrudRepository.findAll();
     }
 
-    public Optional<Cabana> getCabana(int id){
+    public Optional<Cabin> getCabana(int id){
 
         return cabanaCrudRepository.findById(id);
     }
 
-    public Cabana save(Cabana c){
+    public Cabin save(Cabin c){
 
         return cabanaCrudRepository.save(c);
     }
 
-    public void delete(Cabana c){
+    public void delete(Cabin c){
 
         cabanaCrudRepository.delete(c);
     }

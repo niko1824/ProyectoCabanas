@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "cabin" )
-public class Cabana implements Serializable {
+public class Cabin implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +28,7 @@ public class Cabana implements Serializable {
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cabin")
     @JsonIgnoreProperties("cabin")
     private List<Message> messages;
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cabana")
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cabin")
     @JsonIgnoreProperties({"cabana", "messages"})
     private List<Reservas> reservations;
 

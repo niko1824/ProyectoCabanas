@@ -28,6 +28,11 @@ public class Reservas implements Serializable {
     @JoinColumn(name = "cabana_id")
     @JsonIgnoreProperties("reservation")
     private Cabana cabana;
+
+    @ManyToOne
+    @JoinColumn(name= "category_id")
+    @JsonIgnoreProperties("reservation")
+    private Category category;
     @ManyToOne
     @JoinColumn(name = "client_id")
     @JsonIgnoreProperties({"reservas","messages"})

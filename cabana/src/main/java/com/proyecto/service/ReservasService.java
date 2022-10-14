@@ -50,8 +50,8 @@ public class ReservasService {
                 if (p.getIdReservation()!=null){
                     q.get().setIdReservation(p.getIdReservation());
                 }
-                if (p.getCabana()!=null){
-                    q.get().setCabana(p.getCabana());
+                if (p.getCabin()!=null){
+                    q.get().setCabin(p.getCabin());
                 }
                 if (p.getClient()!=null){
                     q.get().setClient(p.getClient());

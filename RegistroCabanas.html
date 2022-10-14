@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+  		<title>Proyecto Alquiler de Caba&ntilde;as</title>
+		  <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		  <script type= "text/javascript" src= "funciones.js"></script>
+  	</head>
+	<body>
+		<h1 style= "color: #FDFEFE; background-color: #154360; padding: 20px;">
+  			<font face= "Segoe UI">&nbsp;&nbsp;&nbsp;ALQUILER DE CABA&Ntilde;AS</font>
+			<a href= "PaginaPrincipal.html"><img width= "61px" alt= "Cabana" src= "https://cdn-icons-png.flaticon.com/512/2119/2119247.png" style= "float: left;"/></a>
+		</h1>
+		<h2 style= "color: #154360; position: absolute; top: 18%; left: 42%;">
+  			<font face= "Segoe UI">REGISTRO DE CABA&Ntilde;AS</font>
+		</h2>
+		<label style = "position: absolute; top: 33%; left: 38%;">
+			<font face= "Segoe UI">ID</font>
+		</label>
+		<input type= "number" id= "id" placeholder= "--" style= "position: absolute; top: 33%; left: 53%;">
+		<label style = "position: absolute; top: 39%; left: 38%;">
+				<font face= "Segoe UI">Nombre</font>
+		</label>
+		<input type= "text" id= "name" placeholder= "Ingrese el nombre de la cabaña" style= "position: absolute; top: 39%; left: 53%;">
+		<label style= "position: absolute; top: 45%; left: 38%;">
+			<font face= "Segoe UI">Cantidad de habitaciones</font>
+		</label>
+		<input type= "number" id= "rooms" placeholder= "Ingrese la cantidad de habitaciones" style= "position: absolute; top: 45%; left: 53%;">
+		<label style= "position: absolute; top: 51%; left: 38%;">
+			<font face= "Segoe UI">Marca</font>
+		</label>
+		<input type= "text" id = "brand" placeholder= "Ingrese la marca" style= "position: absolute; top: 51%; left: 53%;">
+		<label style= "position: absolute; top: 57%; left: 38%;">
+		<font face= "Segoe UI">Categoria</font>
+		</label>
+		<input type= "number" id= "category_id" placeholder= "Ingrese la categoria" style= "position: absolute; top: 57%; left: 53%;">
+		<button onclick= "registroCab()" style= "color: #FDFEFE; background-color: #154360; font-size: 15px; padding: 8px; position: absolute; top: 66%; left: 49%;">
+			<font face= "Segoe UI">Registrar</font>
+		</button>
+			<div id= "resultado"></div>
+	</body>
+</html>

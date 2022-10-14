@@ -13,14 +13,14 @@ public class Reservas implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idReserva;
+    private Integer idReservation;
 
 
-    private String cliente;
 
-    private Date fechainicio;
 
-    private Date fechafin;
+    private Date startDate;
+
+    private Date devolutionDate;
 
     @ManyToOne
     @JoinColumn(name = "cabana_id")
@@ -37,39 +37,28 @@ public class Reservas implements Serializable {
     private Score score;
 
 
-    public Integer getIdReserva() {
-        return idReserva;
+    public Integer getIdReservation() {
+        return idReservation;
     }
 
-
-    public String getCliente() {
-        return cliente;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public Date getFechainicio() {
-        return fechainicio;
+    public Date getDevolutionDate() {
+        return devolutionDate;
     }
 
-    public Date getFechafin() {
-        return fechafin;
+    public void setIdReservation(Integer idReservation) {
+        this.idReservation = idReservation;
     }
 
-
-    public void setIdReserva(Integer idReserva) {
-        this.idReserva = idReserva;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
-    }
-
-    public void setFechainicio(Date fechainicio) {
-        this.fechainicio = fechainicio;
-    }
-
-    public void setFechafin(Date fechafin) {
-        this.fechafin = fechafin;
+    public void setDevolutionDate(Date devolutionDate) {
+        this.devolutionDate = devolutionDate;
     }
 
     public Cabana getCabana() {

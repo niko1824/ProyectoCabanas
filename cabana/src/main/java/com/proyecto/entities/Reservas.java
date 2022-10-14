@@ -22,6 +22,8 @@ public class Reservas implements Serializable {
 
     private Date devolutionDate;
 
+    private String status = "created";
+
     @ManyToOne
     @JoinColumn(name = "cabana_id")
     @JsonIgnoreProperties("reservation")
@@ -77,5 +79,21 @@ public class Reservas implements Serializable {
 
     public void setScore(Score score) {
         this.score = score;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public Cabana getCabana() {
+        return cabana;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setCabana(Cabana cabana) {
+        this.cabana = cabana;
     }
 }

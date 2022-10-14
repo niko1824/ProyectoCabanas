@@ -25,7 +25,7 @@ public class Reservas implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "cabana_id")
-    @JsonIgnoreProperties({"reservations","client"})
+    @JsonIgnoreProperties({"reservations","client","messages"})
     private Cabin cabin;
 
     @ManyToOne
@@ -34,7 +34,7 @@ public class Reservas implements Serializable {
     private Category category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cabin")
-    @JsonIgnoreProperties({ "client"})
+    @JsonIgnoreProperties({ "client","cabin"})
     private List<Message> messages;
     @ManyToOne
     @JoinColumn(name = "client_id")

@@ -200,29 +200,30 @@ function redirecClie(){
 /*Registro de datos clientes*/
 
 function registroCli(){
-    if ($("#id").val() != "" && $("#name").val() != "" && $("#email").val() != "" && $("#age").val() != ""){
+    if ($("#name").val() != "" && $("#email").val() != "" && $("#age").val() != "" && $("#password").val() != ""){
 
         let myData ={
-            id:$("#id").val(),
             name:$("#name").val(),
             email:$("#email").val(),
             age:$("#age").val(),
+            password:$("#password").val(),
         };
 
     let dataToSend = JSON.stringify(myData);
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/client/client",
+        url:"http://130.162.34.139/api/Client/save",
         type: "POST",
         data: myData,
+        contentType: "application/JSON",
         dataType: "JSON",
         success(respuestaCli){
 
             $("#resultado2").empty();
-            $("#id").val("");
             $("#name").val("");
             $("#email").val("");
             $("#age").val("");
+            $("#password").val("");
             alert("¡Registrado con exito!")
         }
     });
@@ -565,3 +566,4 @@ function borrarCab(idCliente){
         }
     });
 }
+

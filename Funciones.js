@@ -294,10 +294,10 @@ function detalleMensaje(){
 
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/message/message",
+        url:"http://130.162.34.139/api/Message/all",
         type: "GET",
         dataType :"JSON",
-        success :function(respuestaMen){
+        success: function(respuestaMen){
             console.log(respuestaMen);
             mostrarTablaMen(respuestaMen.items)
         }
@@ -308,7 +308,6 @@ function mostrarTablaMen(items){
 
     let myTable3 = "<table style= 'background: #cccccc; margin-top: 30px;'>";
     myTable3+= "<tr bgcolor='#ffffff'>";
-    myTable3+= "<th style= 'padding: 8px;'>ID</th>";
     myTable3+= "<th style= 'padding: 8px;'>Mensaje</th>";
     myTable3+= "<th style= 'padding: 8px;'>Borrar</th>";
     myTable3+= "<th style= 'padding: 8px;'>Actualizar</th>";
@@ -317,7 +316,6 @@ function mostrarTablaMen(items){
     for(i=0 ; i < items.length;i++){
 
         myTable3+= "<tr bgcolor='#ffffff'>";
-        myTable3+= "<td style= 'padding: 8px;'>"+items[i].id +"</td>";
         myTable3+= "<td style= 'padding: 8px;'>"+items[i].messagetext +"</td>";
         myTable3+="<td style= 'padding: 8px;'><button onclick ='borrarMen("+ items[i].id+")'>Borrar</button>";
         myTable3+="<td style= 'padding: 8px;'><button onclick ='redirecMen()'>Actualizar</button>";

@@ -134,7 +134,7 @@ function borrarCab(idCliente){
     let dataToSend = JSON.stringify(myData);
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/cabin/cabin",
+        url:"http://130.162.34.139/api/Cabin/{id}",
         type : "DELETE",
         data: dataToSend,
         contentType: "application/JSON",
@@ -373,7 +373,7 @@ function borrarMen(idMen){
     let dataToSend = JSON.stringify(myData);
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/message/message",
+        url:"http://130.162.34.139/api/Message/{id}",
         type : "DELETE",
         data: dataToSend,
         contentType: "application/JSON",
@@ -528,9 +528,9 @@ function actualizarCat(){
     }
 }
 
-/* Borrar datos Cabañas*/
+/* Borrar datos Categotias*/
 
-function borrarCab(idCliente){
+function borrarCat(idCliente){
 
     let myData ={
         id : idCliente
@@ -539,14 +539,14 @@ function borrarCab(idCliente){
     let dataToSend = JSON.stringify(myData);
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/cabin/cabin",
+        url:"http://130.162.34.139/api/Category/{id",
         type : "DELETE",
         data: dataToSend,
         contentType: "application/JSON",
         dataType: "JSON",
-        success:function(respuesta){
-            $("#resultado").empty();
-            detalleCabana()
+        success:function(respuestaCat){
+            $("#resultado4").empty();
+            detalleCategoria()
             alert("¡Eliminado con exito!")
         }
     });
@@ -674,9 +674,9 @@ function actualizarRes(){
     }
 }
 
-/* Borrar datos Cabañas*/
+/* Borrar datos Reservas*/
 
-function borrarCab(idCliente){
+function borrarRes(idCliente){
 
     let myData ={
         id : idCliente
@@ -685,14 +685,14 @@ function borrarCab(idCliente){
     let dataToSend = JSON.stringify(myData);
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/cabin/cabin",
+        url:"http://130.162.34.139/api/Reservation/{id}",
         type : "DELETE",
         data: dataToSend,
         contentType: "application/JSON",
         dataType: "JSON",
-        success:function(respuesta){
-            $("#resultado").empty();
-            detalleCabana()
+        success:function(respuestaRes){
+            $("#resultado5").empty();
+            detalleReservas()
             alert("¡Eliminado con exito!")
         }
     });
@@ -812,30 +812,6 @@ function actualizarCalRes(){
     }
 }
 
-/* Borrar datos Cabañas*/
-
-function borrarCab(idCliente){
-
-    let myData ={
-        id : idCliente
-    };
-
-    let dataToSend = JSON.stringify(myData);
-    $.ajax({
-
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/cabin/cabin",
-        type : "DELETE",
-        data: dataToSend,
-        contentType: "application/JSON",
-        dataType: "JSON",
-        success:function(respuesta){
-            $("#resultado").empty();
-            detalleCabana()
-            alert("¡Eliminado con exito!")
-        }
-    });
-}
-
 /*Funciones usuarios administradores*/
 
 function detalleAdmUs(){
@@ -951,7 +927,7 @@ function actualizarAdmUs(){
 
 /* Borrar datos Cabañas*/
 
-function borrarCab(idCliente){
+function borrarAdmUs(idCliente){
 
     let myData ={
         id : idCliente
@@ -960,14 +936,14 @@ function borrarCab(idCliente){
     let dataToSend = JSON.stringify(myData);
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/cabin/cabin",
+        url:"http://130.162.34.139/api/Admin/{id}",
         type : "DELETE",
         data: dataToSend,
         contentType: "application/JSON",
         dataType: "JSON",
-        success:function(respuesta){
-            $("#resultado").empty();
-            detalleCabana()
+        success:function(respuestaAdmUs){
+            $("#resultado7").empty();
+            detalleAdmUs()
             alert("¡Eliminado con exito!")
         }
     });

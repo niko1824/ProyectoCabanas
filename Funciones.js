@@ -560,52 +560,52 @@ function borrarCab(idCliente){
 
 /*Funciones reservas*/
 
-function detalleCabana(){
+function detalleReservas(){
 
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/cabin/cabin",
+        url:"http://130.162.34.139/api/Reservation/all",
         type: "GET",
+        contentType: "application/JSON",
         dataType: "JSON",
-        success: function(respuesta){
-            console.log(respuesta);
-            mostrarTablaCab(respuesta.items)
+        success: function(respuestaRes){
+            console.log(respuestaRes);
+            mostrarTablaRes(respuestaRes.items)
         }
     });
 }
 
-function mostrarTablaCab(items){
+function mostrarTablaRes(items){
 
-    let myTable = "<table style= 'background: #cccccc; margin-top: 30px;'>";
-    myTable+= "<tr bgcolor='#ffffff'>";
-    myTable+= "<th style= 'padding: 8px;'>ID</th>";
-    myTable+= "<th style= 'padding: 8px;'>Nombre</th>";
-    myTable+= "<th style= 'padding: 8px;'>Habitaciones</th>";
-    myTable+= "<th style= 'padding: 8px;'>Marca</th>";
-    myTable+= "<th style= 'padding: 8px;'>Categoria</th>";
-    myTable+= "<th style= 'padding: 8px;'>Borrar</th>";
-    myTable+= "<th style= 'padding: 8px;'>Actualizar</th>";
-    myTable+= "</tr>";
+    let myTable5 = "<table style= 'background: #cccccc; margin-top: 30px;'>";
+    myTable5+= "<tr bgcolor='#ffffff'>";
+    myTable5+= "<th style= 'padding: 8px;'>ID</th>";
+    myTable5+= "<th style= 'padding: 8px;'>Cabaña</th>";
+    myTable5+= "<th style= 'padding: 8px;'>Cliente</th>";
+    myTable5+= "<th style= 'padding: 8px;'>Fecha entrada</th>";
+    myTable5+= "<th style= 'padding: 8px;'>Fecha salida</th>";
+    myTable5+= "<th style= 'padding: 8px;'>Borrar</th>";
+    myTable5+= "<th style= 'padding: 8px;'>Actualizar</th>";
+    myTable5+= "</tr>";
 
     for(i=0 ; i < items.length;i++){
 
-        myTable+= "<tr bgcolor='#ffffff'>";
-        myTable+= "<td style= 'padding: 8px;'>"+items[i].id +"</td>";
-        myTable+= "<td style= 'padding: 8px;'>"+items[i].name+"</td>";
-        myTable+= "<td style= 'padding: 8px;'>"+items[i].rooms +"</td>";
-        myTable+= "<td style= 'padding: 8px;'>"+items[i].brand +"</td>";
-        myTable+= "<td style= 'padding: 8px;'>"+items[i].category_id+"</td>";
-        myTable+="<td style= 'padding: 8px;'><button onclick ='borrarCab("+ items[i].id+")'>Borrar</button>";
-        myTable+="<td style= 'padding: 8px;'><button onclick ='redirecCab()'>Actualizar</button>";
-        myTable+= "</tr>";
+        myTable5+= "<tr bgcolor='#ffffff'>";
+        myTable5+= "<td style= 'padding: 8px;'>"+items[i].id +"</td>";
+        myTable5+= "<td style= 'padding: 8px;'>"+items[i].cabana_id+"</td>";
+        myTable5+= "<td style= 'padding: 8px;'>"+items[i].startDate +"</td>";
+        myTable5+= "<td style= 'padding: 8px;'>"+items[i].devolutionDate +"</td>";
+        myTable5+="<td style= 'padding: 8px;'><button onclick ='borrarCab("+ items[i].id+")'>Borrar</button>";
+        myTable5+="<td style= 'padding: 8px;'><button onclick ='redirecCab()'>Actualizar</button>";
+        myTable5+= "</tr>";
     }
-    myTable+= "</table>";
-    $("#resultado").append(myTable);
+    myTable5+= "</table>";
+    $("#resultado5").append(myTable);
 }
 
-function redirecCab(){
+function redirecRes(){
 
-    window.location.href="ActualizarCabanas.html";
+    window.location.href="ActualizarReservas.html";
 }
 
 /*Registro de datos reservas*/

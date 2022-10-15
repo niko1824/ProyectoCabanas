@@ -1,5 +1,5 @@
 /*Funciones cabañas*/
-/*Prueba*/
+
 function detalleCabana(){
 
     $.ajax({
@@ -51,31 +51,32 @@ function redirecCab(){
 /*Registro de datos cabañas*/
 
 function registroCab(){
-    if ($("#id").val() != "" && $("#brand").val() != "" && $("#rooms").val() != "" && $("#category_id").val() != "" && $("#name").val() != ""){
+    if ($("#brand").val() != "" && $("#rooms").val() != "" && $("#category_id").val() != "" && $("#name").val() != "" && $("#description").val() != ""){
 
         let myData ={
-            id:$("#id").val(),
             brand:$("#brand").val(),
             rooms:$("#rooms").val(),
             category_id:$("#category_id").val(),
             name:$("#name").val(),
+            description:$("#description").val(),
         };
 
     let dataToSend = JSON.stringify(myData);
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/cabin/cabin",
+        url: "http://130.162.34.139/api/Cabin/save",
         type: "POST",
         data: myData,
+        contentType: "application/JSON",
         dataType: "JSON",
         success: function(respuesta){
 
             $("#resultado").empty();
-            $("#id").val("");
             $("#brand").val("");
             $("#rooms").val("");
             $("#category_id").val("");
             $("#name").val("");
+            $("#description").val("");
             alert("¡Registrado con exito!")
         }
     });
@@ -420,3 +421,6 @@ function actualizarMen(){
           alert("¡Debe ingresar la información de todos los campos!")
     }
 }
+
+/*Funciones categorias*/
+

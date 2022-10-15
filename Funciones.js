@@ -230,20 +230,20 @@ function registroCli(){
     }
 }
 /*Actualizar informacion clientes*/
+
 function actualizarCli(){
-    if ($("#id").val() != "" && $("#brand").val() != "" && $("#rooms").val() != "" && $("#category_id").val() != "" && $("#name").val() != ""){
+    if ($("#name").val() != "" && $("#password").val() != "" && $("#age").val() != ""){
 
         let myData ={
-            id:$("#id").val(),
             name:$("#name").val(),
-            email:$("#email").val(),
+            password:$("#password").val(),
             age:$("#age").val(),
         };
 
     let dataToSend = JSON.stringify(myData);
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/client/client",
+        url:"http://130.162.34.139/api/Client/update",
         type: "PUT",
         data: dataToSend,
         contentType:"application/JSON",
@@ -251,9 +251,8 @@ function actualizarCli(){
         success: function(respuestaCli){
 
             $("#resultado2").empty();
-            $("#id").val("");
             $("#name").val("");
-            $("#email").val("");
+            $("#password").val("");
             $("#age").val("");
             alert("¡Actualizado con exito!")
         }
@@ -389,10 +388,10 @@ function borrarMen(idMen){
 
 /*Actualizar informacion mensajes*/
 function actualizarMen(){
-    if ($("#id").val() != "" && $("#messagetext").val() != ""){
+    if ($("#cabana_id").val() != "" && $("#messagetext").val() != ""){
 
         let myData ={
-            id:$("#id").val(),
+            cabana_id:$("#cabana_id").val(),
             messagetext:$("#messagetext").val(),
 
         };
@@ -400,7 +399,7 @@ function actualizarMen(){
     let dataToSend = JSON.stringify(myData);
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/message/message",
+        url:"http://130.162.34.139/api/Message/update",
         type: "PUT",
         data: dataToSend,
         contentType:"application/JSON",
@@ -408,7 +407,7 @@ function actualizarMen(){
         success: function(respuestaMen){
 
             $("#resultado3").empty();
-            $("#id").val("");
+            $("#cabana_id").val("");
             $("#messagetext").val("");
             alert("¡Actualizado con exito!")
         }

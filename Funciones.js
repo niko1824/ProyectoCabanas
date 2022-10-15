@@ -168,7 +168,6 @@ function mostrarTablaCli(items){
 
     let myTable2 = "<table style= 'background: #cccccc; margin-top: 30px;'>";
     myTable2+= "<tr bgcolor='#ffffff'>";
-    myTable2+= "<th style= 'padding: 8px;'>ID</th>";
     myTable2+= "<th style= 'padding: 8px;'>Nombre</th>";
     myTable2+= "<th style= 'padding: 8px;'>Edad</th>";
     myTable2+= "<th style= 'padding: 8px;'>Correo electrónico</th>";
@@ -180,7 +179,6 @@ function mostrarTablaCli(items){
 
 
         myTable2+= "<tr bgcolor='#ffffff'>";
-        myTable2+= "<td style= 'padding: 8px;'>"+items[i].id +"</td>";
         myTable2+= "<td style= 'padding: 8px;'>"+items[i].name +"</td>";
         myTable2+= "<td style= 'padding: 8px;'>"+items[i].email +"</td>";
         myTable2+= "<td style= 'padding: 8px;'>"+items[i].age+"</td>";
@@ -442,24 +440,24 @@ function detalleCategoria(){
 
 function mostrarTablaCat(items){
 
-    let myTable = "<table style= 'background: #cccccc; margin-top: 30px;'>";
-    myTable+= "<tr bgcolor='#ffffff'>";
-    myTable+= "<th style= 'padding: 8px;'>Nombre</th>";
-    myTable+= "<th style= 'padding: 8px;'>Descripción</th>";
-    myTable+= "<th style= 'padding: 8px;'>Borrar</th>";
-    myTable+= "<th style= 'padding: 8px;'>Actualizar</th>";
-    myTable+= "</tr>";
+    let myTable4 = "<table style= 'background: #cccccc; margin-top: 30px;'>";
+    myTable4+= "<tr bgcolor='#ffffff'>";
+    myTable4+= "<th style= 'padding: 8px;'>Nombre</th>";
+    myTable4+= "<th style= 'padding: 8px;'>Descripción</th>";
+    myTable4+= "<th style= 'padding: 8px;'>Borrar</th>";
+    myTable4+= "<th style= 'padding: 8px;'>Actualizar</th>";
+    myTable4+= "</tr>";
 
     for(i=0 ; i < items.length;i++){
 
-        myTable+= "<tr bgcolor='#ffffff'>";
-        myTable+= "<td style= 'padding: 8px;'>"+items[i].name+"</td>";
-        myTable+= "<td style= 'padding: 8px;'>"+items[i].description +"</td>";
-        myTable+="<td style= 'padding: 8px;'><button onclick ='borrarCat("+ items[i].id+")'>Borrar</button>";
-        myTable+="<td style= 'padding: 8px;'><button onclick ='redirecCat()'>Actualizar</button>";
-        myTable+= "</tr>";
+        myTable4+= "<tr bgcolor='#ffffff'>";
+        myTable4+= "<td style= 'padding: 8px;'>"+items[i].name+"</td>";
+        myTable4+= "<td style= 'padding: 8px;'>"+items[i].description +"</td>";
+        myTable4+="<td style= 'padding: 8px;'><button onclick ='borrarCat("+ items[i].id+")'>Borrar</button>";
+        myTable4+="<td style= 'padding: 8px;'><button onclick ='redirecCat()'>Actualizar</button>";
+        myTable4+= "</tr>";
     }
-    myTable+= "</table>";
+    myTable4+= "</table>";
     $("#resultado4").append(myTable);
 }
 

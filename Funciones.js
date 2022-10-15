@@ -340,25 +340,26 @@ function redirecMen(){
 /*Registro de datos Mensajes*/
 
 function registroMen(){
-    if ($("#id").val() != "" && $("#messagetext").val() != ""){
+    if ($("#messagetext").val() != "" && $("#cabana_id").val() != ""){
 
              let myData ={
-                 id:$("#id").val(),
                  messagetext:$("#messagetext").val(),
+                 cabana_id:$("#cabana_id").val(),
              };
 
          let dataToSend = JSON.stringify(myData);
          $.ajax({
 
-             url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/message/message",
+             url:"http://130.162.34.139/api/Message/save",
              type: "POST",
              data: myData,
+             contentType: "application/JSON",
              dataType: "JSON",
              success: function(respuestaMen){
 
                  $("#resultado3").empty();
-                 $("#id").val("");
                  $("#messagetext").val("");
+                 $("#cabana_id").val("");
                  alert("¡Registrado con exito!")
              }
          });

@@ -387,6 +387,7 @@ function borrarMen(idMen){
     }
 
 /*Actualizar informacion mensajes*/
+
 function actualizarMen(){
     if ($("#cabana_id").val() != "" && $("#messagetext").val() != ""){
 
@@ -588,8 +589,8 @@ function mostrarTablaRes(items){
         myTable5+= "<td style= 'padding: 8px;'>"+items[i].cabana_id+"</td>";
         myTable5+= "<td style= 'padding: 8px;'>"+items[i].startDate +"</td>";
         myTable5+= "<td style= 'padding: 8px;'>"+items[i].devolutionDate +"</td>";
-        myTable5+="<td style= 'padding: 8px;'><button onclick ='borrarCab("+ items[i].id+")'>Borrar</button>";
-        myTable5+="<td style= 'padding: 8px;'><button onclick ='redirecCab()'>Actualizar</button>";
+        myTable5+="<td style= 'padding: 8px;'><button onclick ='borrarRes("+ items[i].id+")'>Borrar</button>";
+        myTable5+="<td style= 'padding: 8px;'><button onclick ='redirecRes()'>Actualizar</button>";
         myTable5+= "</tr>";
     }
     myTable5+= "</table>";
@@ -637,35 +638,33 @@ function registroRes(){
     }
 }
 
-/*Actualizar informacion cabañas*/
+/*Actualizar informacion reservas*/
 
-function actualizarCab(){
-    if ($("#id").val() != "" && $("#brand").val() != "" && $("#rooms").val() != "" && $("#category_id").val() != "" && $("#name").val() != ""){
+function actualizarRes(){
+    if ($("#client_id").val() != "" && $("#cabana_id").val() != "" && $("#startDate").val() != "" && $("#devolutionDate").val() != ""){
 
         let myData ={
-            id:$("#id").val(),
-            brand:$("#brand").val(),
-            rooms:$("#rooms").val(),
-            category_id:$("#category_id").val(),
-            name:$("#name").val(),
+            client_id:$("#client_id").val(),
+            cabana_id:$("#cabana_id").val(),
+            startDate:$("#startDate").val(),
+            startDate:$("#devolutionDate").val(),
         };
 
     let dataToSend = JSON.stringify(myData);
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/cabin/cabin",
+        url:"http://130.162.34.139/api/Reservation/update",
         type: "PUT",
         data: dataToSend,
         contentType:"application/JSON",
         dataType: "JSON",
-        success: function(respuesta){
+        success: function(respuestaRes){
 
-            $("#resultado").empty();
-            $("#id").val("");
-            $("#brand").val("");
-            $("#rooms").val("");
-            $("#category_id").val("");
-            $("#name").val("");
+            $("#resultado5").empty();
+            $("#client_id").val("");
+            $("#cabana_id").val("");
+            $("#startDate").val("");
+            $("#devolutionDate").val("");
             alert("¡Actualizado con exito!")
         }
     });
@@ -701,52 +700,48 @@ function borrarCab(idCliente){
 
 /*Funciones calificacion de reservas*/
 
-function detalleCabana(){
+function detalleCalificacion(){
 
     $.ajax({
 
-        url:"http://130.162.34.139/api/Admin/all",
+        url:"http://130.162.34.139/api/Score/all",
         type: "GET",
         dataType: "JSON",
-        success: function(respuesta){
-            console.log(respuesta);
-            mostrarTablaCab(respuesta.items)
+        success: function(respuestaCalRes){
+            console.log(respuestaCalRes);
+            mostrarTablaCal(respuestaCalRes.items)
         }
     });
 }
 
-function mostrarTablaCab(items){
+function mostrarTablaCal(items){
 
-    let myTable = "<table style= 'background: #cccccc; margin-top: 30px;'>";
-    myTable+= "<tr bgcolor='#ffffff'>";
-    myTable+= "<th style= 'padding: 8px;'>ID</th>";
-    myTable+= "<th style= 'padding: 8px;'>Nombre</th>";
-    myTable+= "<th style= 'padding: 8px;'>Habitaciones</th>";
-    myTable+= "<th style= 'padding: 8px;'>Marca</th>";
-    myTable+= "<th style= 'padding: 8px;'>Categoria</th>";
-    myTable+= "<th style= 'padding: 8px;'>Borrar</th>";
-    myTable+= "<th style= 'padding: 8px;'>Actualizar</th>";
-    myTable+= "</tr>";
+    let myTable6= "<table style= 'background: #cccccc; margin-top: 30px;'>";
+    myTable6+= "<tr bgcolor='#ffffff'>";
+    myTable6+= "<th style= 'padding: 8px;'>Reserva</th>";
+    myTable6+= "<th style= 'padding: 8px;'>Calificación</th>";
+    myTable6+= "<th style= 'padding: 8px;'>Mensaje</th>";
+    myTable6+= "<th style= 'padding: 8px;'>Borrar</th>";
+    myTable6+= "<th style= 'padding: 8px;'>Actualizar</th>";
+    myTable6+= "</tr>";
 
     for(i=0 ; i < items.length;i++){
 
-        myTable+= "<tr bgcolor='#ffffff'>";
-        myTable+= "<td style= 'padding: 8px;'>"+items[i].id +"</td>";
-        myTable+= "<td style= 'padding: 8px;'>"+items[i].name+"</td>";
-        myTable+= "<td style= 'padding: 8px;'>"+items[i].rooms +"</td>";
-        myTable+= "<td style= 'padding: 8px;'>"+items[i].brand +"</td>";
-        myTable+= "<td style= 'padding: 8px;'>"+items[i].category_id+"</td>";
-        myTable+="<td style= 'padding: 8px;'><button onclick ='borrarCab("+ items[i].id+")'>Borrar</button>";
-        myTable+="<td style= 'padding: 8px;'><button onclick ='redirecCab()'>Actualizar</button>";
-        myTable+= "</tr>";
+        myTable6+= "<tr bgcolor='#ffffff'>";
+        myTable6+= "<td style= 'padding: 8px;'>"+items[i].reservas +"</td>";
+        myTable6+= "<td style= 'padding: 8px;'>"+items[i].stars+"</td>";
+        myTable6+= "<td style= 'padding: 8px;'>"+items[i].messagetext +"</td>";
+        myTable6+="<td style= 'padding: 8px;'><button onclick ='borrarCal("+ items[i].id+")'>Borrar</button>";
+        myTable6+="<td style= 'padding: 8px;'><button onclick ='redirecCal()'>Actualizar</button>";
+        myTable6+= "</tr>";
     }
-    myTable+= "</table>";
-    $("#resultado").append(myTable);
+    myTable6+= "</table>";
+    $("#resultado6").append(myTable);
 }
 
-function redirecCab(){
+function redirecCal(){
 
-    window.location.href="ActualizarCabanas.html";
+    window.location.href="ActualizarCalificacioReservas.html";
 }
 
 /*Registro de datos calificacion de reservas*/
@@ -783,35 +778,31 @@ function registroCal(){
     }
 }
 
-/*Actualizar informacion cabañas*/
+/*Actualizar informacion calificacion de reservas*/
 
-function actualizarCab(){
-    if ($("#id").val() != "" && $("#brand").val() != "" && $("#rooms").val() != "" && $("#category_id").val() != "" && $("#name").val() != ""){
+function actualizarCalRes(){
+    if ($("#reservas").val() != "" && $("#stars").val() != "" && $("#messagetext").val() != ""){
 
         let myData ={
-            id:$("#id").val(),
-            brand:$("#brand").val(),
-            rooms:$("#rooms").val(),
-            category_id:$("#category_id").val(),
-            name:$("#name").val(),
+            reservas:$("#reservas").val(),
+            stars:$("#stars").val(),
+            messagetext:$("#messagetext").val(),
         };
 
     let dataToSend = JSON.stringify(myData);
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/cabin/cabin",
+        url:"http://130.162.34.139/api/Score/update",
         type: "PUT",
         data: dataToSend,
         contentType:"application/JSON",
         dataType: "JSON",
-        success: function(respuesta){
+        success: function(respuestaCalRes){
 
-            $("#resultado").empty();
-            $("#id").val("");
-            $("#brand").val("");
-            $("#rooms").val("");
-            $("#category_id").val("");
-            $("#name").val("");
+            $("#resultado6").empty();
+            $("#reservas").val("");
+            $("#stars").val("");
+            $("#messagetext").val("");
             alert("¡Actualizado con exito!")
         }
     });
@@ -926,35 +917,29 @@ function registroAdmUs(){
     }
 }
 
-/*Actualizar informacion cabañas*/
+/*Actualizar informacion usuarios administradores*/
 
-function actualizarCab(){
-    if ($("#id").val() != "" && $("#brand").val() != "" && $("#rooms").val() != "" && $("#category_id").val() != "" && $("#name").val() != ""){
+function actualizarAdmUs(){
+    if ($("#name").val() != "" && $("#password").val() != ""){
 
         let myData ={
-            id:$("#id").val(),
-            brand:$("#brand").val(),
-            rooms:$("#rooms").val(),
-            category_id:$("#category_id").val(),
             name:$("#name").val(),
+            password:$("#password").val(),
         };
 
     let dataToSend = JSON.stringify(myData);
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/cabin/cabin",
+        url:"http://130.162.34.139/api/Admin/update",
         type: "PUT",
         data: dataToSend,
         contentType:"application/JSON",
         dataType: "JSON",
-        success: function(respuesta){
+        success: function(respuestaAdmUs){
 
-            $("#resultado").empty();
-            $("#id").val("");
-            $("#brand").val("");
-            $("#rooms").val("");
-            $("#category_id").val("");
+            $("#resultado7").empty();
             $("#name").val("");
+            $("#password").val("");
             alert("¡Actualizado con exito!")
         }
     });

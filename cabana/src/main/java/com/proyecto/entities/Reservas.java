@@ -27,15 +27,16 @@ public class Reservas implements Serializable {
     @JoinColumn(name = "cabana_id")
     @JsonIgnoreProperties({"reservations","client"})
     private Cabin cabin;
+    private List<Message> messages;
+
 
     @ManyToOne
     @JoinColumn(name = "category_id")
     @JsonIgnoreProperties({"reservas","client"})
     private Category category;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
-    @JsonIgnoreProperties({ "client","cabin"})
-    private List<Message> messages;
+
+
     @ManyToOne
     @JoinColumn(name = "client_id")
     @JsonIgnoreProperties({"reservations", "messages"})
@@ -108,5 +109,11 @@ public class Reservas implements Serializable {
         this.cabin = cabin;
     }
 
+    public List<Message> getMessages() {
+        return messages;
+    }
 
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
 }

@@ -88,20 +88,20 @@ function registroCab(){
 /*Actualizar informacion cabañas*/
 
 function actualizarCab(){
-    if ($("#id").val() != "" && $("#brand").val() != "" && $("#rooms").val() != "" && $("#category_id").val() != "" && $("#name").val() != ""){
+    if ($("#brand").val() != "" && $("#rooms").val() != "" && $("#category_id").val() != "" && $("#name").val() != "" && $("#description").val() != ""){
 
         let myData ={
-            id:$("#id").val(),
             brand:$("#brand").val(),
             rooms:$("#rooms").val(),
             category_id:$("#category_id").val(),
             name:$("#name").val(),
+            description:$("#description").val(),
         };
 
     let dataToSend = JSON.stringify(myData);
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/cabin/cabin",
+        url:"http://130.162.34.139/api/Cabin/update",
         type: "PUT",
         data: dataToSend,
         contentType:"application/JSON",
@@ -109,11 +109,11 @@ function actualizarCab(){
         success: function(respuesta){
 
             $("#resultado").empty();
-            $("#id").val("");
             $("#brand").val("");
             $("#rooms").val("");
             $("#category_id").val("");
             $("#name").val("");
+            $("#description").val("");
             alert("¡Actualizado con exito!")
         }
     });
@@ -496,35 +496,29 @@ function registroCat(){
     }
 }
 
-/*Actualizar informacion cabañas*/
+/*Actualizar informacion categorias*/
 
-function actualizarCab(){
-    if ($("#id").val() != "" && $("#brand").val() != "" && $("#rooms").val() != "" && $("#category_id").val() != "" && $("#name").val() != ""){
+function actualizarCat(){
+    if ($("#name").val() != "" && $("#description").val() != ""){
 
         let myData ={
-            id:$("#id").val(),
-            brand:$("#brand").val(),
-            rooms:$("#rooms").val(),
-            category_id:$("#category_id").val(),
             name:$("#name").val(),
+            description:$("#description").val(),
         };
 
     let dataToSend = JSON.stringify(myData);
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/cabin/cabin",
+        url:"http://130.162.34.139/api/Category/update",
         type: "PUT",
         data: dataToSend,
         contentType:"application/JSON",
         dataType: "JSON",
-        success: function(respuesta){
+        success: function(respuestaCat){
 
-            $("#resultado").empty();
-            $("#id").val("");
-            $("#brand").val("");
-            $("#rooms").val("");
-            $("#category_id").val("");
+            $("#resultado4").empty();
             $("#name").val("");
+            $("#description").val("");
             alert("¡Actualizado con exito!")
         }
     });

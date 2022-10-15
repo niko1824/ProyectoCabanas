@@ -17,17 +17,18 @@
 		<label style= "position: absolute; top: 33%; left: 38%;">
 			<font face= "Segoe UI">Reserva</font>
 		</label>
-		<input type= "number" id="id" placeholder= "Reserva" style= "position: absolute; top: 33%; left: 53%;">
+		<input type= "number" id="reservas" placeholder= "Reserva" style= "position: absolute; top: 33%; left: 53%;">
 		<label style = "position: absolute; top: 39%; left: 38%;">
 			<font face= "Segoe UI">Calificaci&oacute;n</font>
 		</label>
-		<input type= "number" id= "score" placeholder="Escriba el mensaje" style= "position: absolute; top: 39%; left: 53%;">
+		<input type= "number" id= "stars" placeholder="Escriba el mensaje" style= "position: absolute; top: 39%; left: 53%;">
 		<label style= "position: absolute; top: 45%; left: 38%;">
 			<font face= "Segoe UI">Mensaje</font>
 		</label>
-		<input type= "number" id= "rooms" style= "position: absolute; top: 45%; left: 53%;">
-		<button onclick="--" style= "color:#FDFEFE; background-color: #154360; font-size: 15px; padding: 8px; position: absolute; top: 54%; left: 49%;">
+		<input type= "text" id= "messagetext" placeholder="Escriba el mensaje" maxlength= "250" style= "position: absolute; top: 45%; left: 53%;">
+		<button onclick="registroCal()" style= "color:#FDFEFE; background-color: #154360; font-size: 15px; padding: 8px; position: absolute; top: 54%; left: 49%;">
 			<font face= "Segoe UI">Registrar</font>
 		</button>
+			<div id= "resultado6"></div>
 	</body>
 </html>

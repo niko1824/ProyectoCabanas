@@ -11,19 +11,20 @@
   			<font face= "Segoe UI">&nbsp;&nbsp;&nbsp;ALQUILER DE CABA&Ntilde;AS</font>
 		  	<a href= "PaginaPrincipal.html"><img width= "61px" alt= "Cabana" src= "https://cdn-icons-png.flaticon.com/512/2119/2119247.png" style= "float: left;"></a>
 		</h1>
-		<h2 style= "color: #154360; position: absolute; top: 18%; left: 42%;">
-  			<font face= "Segoe UI">CREACI&Oacute;N CATEGORIAS</font>
+		<h2 style= "color: #154360; position: absolute; top: 18%; left: 41%;">
+  			<font face= "Segoe UI">CREACI&Oacute;N DE CATEGORIAS</font>
 		</h2>
 		<label style= "position: absolute; top: 33%; left: 38%;">
 			<font face= "Segoe UI">Nombre</font>
 		</label>
-		<input type= "text" id= "name" placeholder= "Ingrese el nombre" style= "position: absolute; top: 33%; left: 53%;">
+		<input type= "text" id= "name" placeholder= "Ingrese el nombre" maxlength= "45" style= "position: absolute; top: 33%; left: 53%;">
 		<label style= "position: absolute; top: 39%; left: 38%;">
 			<font face= "Segoe UI">Descripci&oacute;n</font>
 		</label>
-		<input type= "text" id= "description" placeholder= "Ingrese una descripción" style= "position: absolute; top: 39%; left: 53%;">
-		<button onclick= "--" style= "color:#FDFEFE; background-color: #154360; font-size: 15px; padding: 8px; position: absolute; top: 48%; left: 49%;">
+		<input type= "text" id= "description" placeholder= "Ingrese una descripción" maxlength= "250" style= "position: absolute; top: 39%; left: 53%;">
+		<button onclick= "registroCat()" style= "color:#FDFEFE; background-color: #154360; font-size: 15px; padding: 8px; position: absolute; top: 48%; left: 49%;">
 			<font face= "Segoe UI">Registrar</font>
 		</button>
+		<div id= "resultado4"></div>
 	</body>
 </html>

@@ -4,8 +4,9 @@ function detalleCabana(){
 
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/cabin/cabin",
+        url:"http://130.162.34.139/api/Cabin/all",
         type: "GET",
+        contentType: "application/JSON",
         dataType: "JSON",
         success: function(respuesta){
             console.log(respuesta);
@@ -18,7 +19,6 @@ function mostrarTablaCab(items){
 
     let myTable = "<table style= 'background: #cccccc; margin-top: 30px;'>";
     myTable+= "<tr bgcolor='#ffffff'>";
-    myTable+= "<th style= 'padding: 8px;'>ID</th>";
     myTable+= "<th style= 'padding: 8px;'>Nombre</th>";
     myTable+= "<th style= 'padding: 8px;'>Habitaciones</th>";
     myTable+= "<th style= 'padding: 8px;'>Marca</th>";
@@ -30,7 +30,6 @@ function mostrarTablaCab(items){
     for(i=0 ; i < items.length;i++){
 
         myTable+= "<tr bgcolor='#ffffff'>";
-        myTable+= "<td style= 'padding: 8px;'>"+items[i].id +"</td>";
         myTable+= "<td style= 'padding: 8px;'>"+items[i].name+"</td>";
         myTable+= "<td style= 'padding: 8px;'>"+items[i].rooms +"</td>";
         myTable+= "<td style= 'padding: 8px;'>"+items[i].brand +"</td>";

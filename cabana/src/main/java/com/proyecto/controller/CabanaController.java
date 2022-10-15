@@ -29,7 +29,7 @@ public class CabanaController {
         return cabanaService.save(p);
     }
 
-    @PostMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Cabin update(@RequestBody Cabin p){
 

@@ -29,7 +29,7 @@ public class ScoreController {
         return scoreService.save(p);
     }
 
-    @PostMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Score update(@RequestBody Score p){
         return scoreService.update(p);

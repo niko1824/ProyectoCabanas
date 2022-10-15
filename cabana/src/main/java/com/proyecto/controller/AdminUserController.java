@@ -27,7 +27,7 @@ public class AdminUserController {
         return adminUserService.save(p);
     }
 
-    @PostMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public AdminUser update(@RequestBody AdminUser p){
 

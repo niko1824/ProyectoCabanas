@@ -28,4 +28,18 @@ public class CabanaController {
 
         return cabanaService.save(p);
     }
+
+    @PostMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Cabin update(@RequestBody Cabin p){
+
+        return cabanaService.update(p);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){
+
+        return cabanaService.delete(id);
+    }
 }

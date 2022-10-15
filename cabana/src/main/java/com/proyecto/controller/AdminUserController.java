@@ -26,4 +26,19 @@ public class AdminUserController {
     public AdminUser save(@RequestBody AdminUser p){
         return adminUserService.save(p);
     }
+
+    @PostMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public AdminUser update(@RequestBody AdminUser p){
+
+         return adminUserService.update(p);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){
+
+        return adminUserService.delete(id);
+    }
+
 }

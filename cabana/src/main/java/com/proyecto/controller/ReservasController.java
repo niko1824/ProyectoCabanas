@@ -25,4 +25,17 @@ public class ReservasController {
     public Reservas save(@RequestBody Reservas p){
         return reservasService.save(p);
     }
+
+    @PostMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Reservas update(@RequestBody Reservas p){
+
+        return reservasService.update(p);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id")int id){
+        return reservasService.delete(id);
+    }
 }

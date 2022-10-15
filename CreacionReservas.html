@@ -17,11 +17,11 @@
 		<label style= "position: absolute; top: 33%; left: 38%;">
 			<font face= "Segoe UI">Cliente</font>
 		</label>
-		<input type= "number" id= "client" placeholder= "ID del cliente" style= "position: absolute; top: 33%; left: 53%;">
+		<input type= "number" id= "client_id" placeholder= "ID del cliente" style= "position: absolute; top: 33%; left: 53%;">
 		<label style= "position: absolute; top: 39%; left: 38%;">
 			<font face= "Segoe UI">Cabaña</font>
 		</label>
-		<input type= "number" id= "cabin" placeholder= "ID de la cabaña" style= "position: absolute; top: 39%; left: 53%;">
+		<input type= "number" id= "cabana_id" placeholder= "ID de la cabaña" style= "position: absolute; top: 39%; left: 53%;">
 		<label style= "position: absolute; top: 45%; left: 38%;">
 			<font face= "Segoe UI">Fecha entrada</font>
 		</label>
@@ -29,9 +29,10 @@
 		<label style= "position: absolute; top: 51%; left: 38%;">
 			<font face= "Segoe UI">Fecha Salida</font>
 		</label>
-		<input type= "date" id = "endDate" style= "position: absolute; top: 51%; left: 53%;">
-		<button onclick= "--" style= "color:#FDFEFE; background-color: #154360; font-size: 15px; padding: 8px; position: absolute; top: 60%; left: 49%;">
+		<input type= "date" id = "devolutionDate" style= "position: absolute; top: 51%; left: 53%;">
+		<button onclick= "registroRes()" style= "color:#FDFEFE; background-color: #154360; font-size: 15px; padding: 8px; position: absolute; top: 60%; left: 49%;">
 			<font face= "Segoe UI">Registrar</font>
 		</button>
+			<div id= "resultado5"></div>
 	</body>
 </html>

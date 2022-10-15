@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset= "UTF-8">
+  		<title>Proyecto Alquiler de Caba&ntilde;as</title>
+		  <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		  <script type= "text/javascript" src= "funciones.js"></script>
+  	</head>
+	<body>
+		<h1 style= "color: #FDFEFE; background-color: #154360; padding: 20px;">
+  			<font face= "Segoe UI">&nbsp;&nbsp;&nbsp;ALQUILER DE CABA&Ntilde;AS</font>
+			<a href= "PaginaPrincipal.html"><img width= "61px" alt= "Cabana" src= "https://cdn-icons-png.flaticon.com/512/2119/2119247.png" style= "float: left;"/></a>
+		</h1>
+		<h2 style= "color: #154360; position: absolute; top: 18%; left: 39%;">
+  			<font face= "Segoe UI">ACTUALIZACI&Oacute;N DE RESERVAS</font>
+		</h2>
+		<label style= "position: absolute; top: 33%; left: 38%;">
+			<font face= "Segoe UI">Cliente</font>
+		</label>
+		<input type= "number" id= "client_id" placeholder= "ID del cliente" style= "position: absolute; top: 33%; left: 53%;">
+		<label style= "position: absolute; top: 39%; left: 38%;">
+			<font face= "Segoe UI">Cabaña</font>
+		</label>
+		<input type= "number" id= "cabana_id" placeholder= "ID de la cabaña" style= "position: absolute; top: 39%; left: 53%;">
+		<label style= "position: absolute; top: 45%; left: 38%;">
+			<font face= "Segoe UI">Fecha entrada</font>
+		</label>
+		<input type= "date" id= "startDate" style= "position: absolute; top: 45%; left: 53%;">
+		<label style= "position: absolute; top: 51%; left: 38%;">
+			<font face= "Segoe UI">Fecha Salida</font>
+		</label>
+		<input type= "date" id = "devolutionDate" style= "position: absolute; top: 51%; left: 53%;">
+		<button onclick= "registroRes()" style= "color:#FDFEFE; background-color: #154360; font-size: 15px; padding: 8px; position: absolute; top: 60%; left: 49%;">
+			<font face= "Segoe UI">Actualizar</font>
+		</button>
+			<div id= "resultado5"></div>
+	</body>
+</html>

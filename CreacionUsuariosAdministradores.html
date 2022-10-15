@@ -17,17 +17,18 @@
 		<label style ="position: absolute; top: 33%; left: 38%;">
 			<font face= "Segoe UI">Nombre</font>
 		</label>
-			<input type= "text" id="name" placeholder= "Ingrese su nombre" style= "position: absolute; top: 33%; left: 53%;">
+			<input type= "text" id="name" placeholder= "Ingrese nombre" maxlength= "250" style= "position: absolute; top: 33%; left: 53%;">
 		<label style ="position: absolute; top: 39%; left: 38%;">
 			<font face= "Segoe UI">Correo electr&oacute;nico</font>
 		</label>
-		<input type= "text" id= "email" placeholder="Ingrese su correo electrónico" style= "position: absolute; top: 39%; left: 53%;">
+		<input type= "text" id= "email" placeholder="Ingrese correo electrónico" maxlength= "45" style= "position: absolute; top: 39%; left: 53%;">
 		<label style= "position: absolute; top: 45%; left: 38%;">
 			<font face= "Segoe UI">Contrase&ntilde;a</font>
 		</label>
-		<input type= "text" id= "password" placeholder="Ingrese su contraseña" style= "position: absolute; top: 45%; left: 53%;">
-		<button onclick="--" style= "color:#FDFEFE; background-color: #154360; font-size: 15px; padding: 8px; position: absolute; top: 53%; left: 49%;">
+		<input type= "text" id= "password" placeholder="Ingrese una contraseña" maxlength= "45" style= "position: absolute; top: 45%; left: 53%;">
+		<button onclick="registroAdmUs()" style= "color:#FDFEFE; background-color: #154360; font-size: 15px; padding: 8px; position: absolute; top: 53%; left: 49%;">
 			<font face= "Segoe UI">Registrar</font>
 		</button>
+			<div id= "resultado7"></div>
 	</body>
 </html>

@@ -182,7 +182,6 @@ function mostrarTablaCli(items){
         myTable2+= "<td style= 'padding: 8px;'>"+items[i].name +"</td>";
         myTable2+= "<td style= 'padding: 8px;'>"+items[i].email +"</td>";
         myTable2+= "<td style= 'padding: 8px;'>"+items[i].age+"</td>";
-        myTable2+="<td style= 'padding: 8px;'><button onclick ='borrarCli("+ items[i].id+")'>Borrar</button>";
         myTable2+="<td style= 'padding: 8px;'><button onclick ='redirecClie()'>Actualizar</button>";
         myTable2+= "</tr>";
     }

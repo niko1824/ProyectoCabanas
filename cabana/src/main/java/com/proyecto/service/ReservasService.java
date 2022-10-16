@@ -2,10 +2,16 @@ package com.proyecto.service;
 
 
 import com.proyecto.entities.Reservas;
+import com.proyecto.entities.client.CountClient;
+import com.proyecto.entities.client.DescriptionAmount;
 import com.proyecto.repository.ReservasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -78,6 +84,38 @@ public class ReservasService {
             flag = true;
         }
         return flag;
+    }
+
+    public List<CountClient>getTopClient(){
+        return ReservasRepository.getTopClient();
+    }
+
+    public DescriptionAmount getStatus(){
+
+        List<Reservas> completed=ReservasRepository.getReservasByStatus("completed");
+        List<Reservas> cancelled=ReservasRepository.getReservasByStatus("cancelled");
+
+        DescriptionAmount descAmount=new DescriptionAmount(completed.size(), cancelled.size());
+        return descAmount;
+    }
+
+    public List<Reservas> getReservasPeriod(String d1, String d2){
+        SimpleDateFormat parser=new SimpleDateFormat("yyyy-MM-dd");
+        Date dateOne=new Date();
+        Date dateTwo=new Date();
+        try {
+            dateOne=parser.parse(d1);
+            dateTwo=parser.parse(d2);
+        }catch (ParseException e) {
+            e.printStackTrace();
+        }
+        if (dateOne.before(dateTwo)){
+            return reservasRepository.getReservasPeriod(dateOne,dateTwo);
+        }else {
+            return new ArrayList<>();
+        }
+
+
     }
 }
 

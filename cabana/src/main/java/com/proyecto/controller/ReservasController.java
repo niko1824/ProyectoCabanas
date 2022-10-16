@@ -2,6 +2,8 @@ package com.proyecto.controller;
 
 
 import com.proyecto.entities.Reservas;
+import com.proyecto.entities.client.CountClient;
+import com.proyecto.entities.client.DescriptionAmount;
 import com.proyecto.service.ReservasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,5 +39,20 @@ public class ReservasController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id")int id){
         return reservasService.delete(id);
+    }
+
+    @GetMapping("/report-status")
+    public DescriptionAmount getReservasDescriptionStatus(){
+        return ReservasService.getStatus();
+    }
+
+    @GetMapping("report-clients")
+    public List<CountClient> getCountClient(){
+        return ReservasService.getTopClient();
+    }
+
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservas> getDatesReport(@PathVariable("dateOne")String d1, @PathVariable("dateTwo") String d2){
+        return reservasService.getReservasPeriod(d1, d2);
     }
 }

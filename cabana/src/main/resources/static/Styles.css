@@ -1,1 +1,8 @@
-.botones
+.botonesPrincipales{
+    color: #FDFEFE;
+    background-color: #154360;
+    font-size: 15px;
+    padding: 8px;
+    font-family: Segoe UI;
+    margin-left: 20px
+}

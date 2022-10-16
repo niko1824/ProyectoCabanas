@@ -901,7 +901,7 @@ function actualizarAdmUs(){
     }
 }
 
-/* Borrar datos Cabañas*/
+/* Borrar datos usuarios administradores */
 
 function borrarAdmUs(idCliente){
 

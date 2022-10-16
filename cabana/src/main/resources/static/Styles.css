@@ -6,3 +6,25 @@
     font-family: Segoe UI;
     margin-left: 20px
 }
+.etiquetaUno{
+    position: absolute;
+    top: 33%;
+    left: 38%;
+    font-family: Segoe UI;
+}
+.inputUno{
+    position: absolute;
+    top: 33%;
+    left: 53%;
+}
+.etiquetaDos{
+    position: absolute;
+    top: 39%;
+    left: 38%;
+    font-family: Segoe UI;
+}
+.inputDos{
+    position: absolute;
+    top: 39%;
+    left: 53%;
+}

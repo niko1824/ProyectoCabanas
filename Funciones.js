@@ -153,7 +153,7 @@ function detalleClientes(){
 
     $.ajax({
 
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/client/client",
+        url:"http://130.162.34.139/api/Client/all",
         type: "GET",
         dataType :"JSON",
         success :function(respuestaCli){
@@ -263,29 +263,6 @@ function actualizarCli(){
     }
 }
 
-/* Borrar datos Cliente*/
-
-function borrarCli(idCliente){
-
-    let myData ={
-        id : idCliente
-    };
-
-    let dataToSend = JSON.stringify(myData);
-    $.ajax({
-
-        url:"https://g9a57240d8d860f-r2oj2f73pu6lrxwm.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/client/client",
-        type : "DELETE",
-        data: dataToSend,
-        contentType: "application/JSON",
-        dataType:"JSON",
-        success:function(respuesta){
-            $("#resultado2").empty();
-            detalleClientes();
-            alert("¡Eliminado con exito!")
-        }
-    });
-}
 
 /*Funciones Mensajes*/
 
@@ -818,7 +795,7 @@ function detalleAdmUs(){
 
     $.ajax({
 
-        url:"http://130.162.34.139/api/Admin/al",
+        url:"http://130.162.34.139/api/Admin/all",
         type: "GET",
         contentType: "application/JSON",
         dataType: "JSON",

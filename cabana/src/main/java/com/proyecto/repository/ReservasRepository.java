@@ -49,7 +49,7 @@ public class ReservasRepository {
     public List<CountClient>getTopClient(){
         List<CountClient> resultado=new ArrayList<>();
 
-        List<Object[]> reporte=reservasCrudRepository.countTotalReservasByClient();
+        List<Object[]> reporte= reservasCrudRepository.countTotalReservasByClient();
         for(int i=0; i<reporte.size();i++){
             Client cli=(Client) reporte.get(i)[0];
             Integer cantidad=(Integer) reporte.get(i)[1];

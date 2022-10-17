@@ -41,12 +41,9 @@ public class ReservasController {
         return reservasService.delete(id);
     }
 
-    @GetMapping("/report-status")
-    public DescriptionAmount getReservasDescriptionStatus(){
-        return reservasService.getStatus();
-    }
 
-    @GetMapping("/report-clients")
+
+   @GetMapping("/report-clients")
     public List<CountClient> getCountClient(){
         return reservasService.getTopClient();
     }
@@ -54,5 +51,9 @@ public class ReservasController {
     @GetMapping("/report-dates/{dateOne}/{dateTwo}")
     public List<Reservas> getDatesReport(@PathVariable("dateOne")String d1, @PathVariable("dateTwo") String d2){
         return reservasService.getReservasPeriod(d1, d2);
+    }
+    @GetMapping("/report-status")
+    public DescriptionAmount getReservasDescriptionStatus(){
+        return reservasService.getStatus();
     }
 }

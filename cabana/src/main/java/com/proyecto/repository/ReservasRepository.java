@@ -50,11 +50,8 @@ public class ReservasRepository {
         List<CountClient> resultado=new ArrayList<>();
 
         List<Object[]> reporte= reservasCrudRepository.countTotalReservasByClient();
-        for(int i=0; i<reporte.size();i++){
-            Client cli=(Client) reporte.get(i)[0];
-            Integer cantidad=(Integer) reporte.get(i)[1];
-            CountClient cc=new CountClient(cantidad,cli);
-            resultado.add(cc);
+        for(int i=0;i<reporte.size();i++){
+            resultado.add(new CountClient((Long)reporte.get(i)[1],(Client) reporte.get(i)[0]));
         }
 
         return resultado;

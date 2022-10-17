@@ -86,14 +86,14 @@ public class ReservasService {
         return flag;
     }
 
-    public static List<CountClient>getTopClient(){
-        return ReservasRepository.getTopClient();
+    public List<CountClient>getTopClient(){
+        return reservasRepository.getTopClient();
     }
 
-    public static DescriptionAmount getStatus(){
+    public DescriptionAmount getStatus(){
 
-        List<Reservas> completed=ReservasRepository.getReservasByStatus("completed");
-        List<Reservas> cancelled=ReservasRepository.getReservasByStatus("cancelled");
+        List<Reservas> completed=reservasRepository.getReservasByStatus("completed");
+        List<Reservas> cancelled=reservasRepository.getReservasByStatus("cancelled");
 
         DescriptionAmount descAmount=new DescriptionAmount(completed.size(), cancelled.size());
         return descAmount;

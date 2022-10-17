@@ -43,12 +43,12 @@ public class ReservasController {
 
     @GetMapping("/report-status")
     public DescriptionAmount getReservasDescriptionStatus(){
-        return ReservasService.getStatus();
+        return reservasService.getStatus();
     }
 
     @GetMapping("report-clients")
     public List<CountClient> getCountClient(){
-        return ReservasService.getTopClient();
+        return reservasService.getTopClient();
     }
 
     @GetMapping("/report-dates/{dateOne}/{dateTwo}")

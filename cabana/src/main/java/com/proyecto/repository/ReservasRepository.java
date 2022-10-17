@@ -38,18 +38,18 @@ public class ReservasRepository {
         reservasCrudRepository.delete(p);
     }
 
-    public static List<Reservas> getReservasByStatus(String status){
-        return ReservasCrudRepository.findAllByStatus(status);
+    public List<Reservas> getReservasByStatus(String status){
+        return reservasCrudRepository.findAllByStatus(status);
     }
 
     public List<Reservas> getReservasPeriod(Date dateOne, Date dateTwo){
-        return ReservasCrudRepository.findAllByStartDateAfterAndStartDateBefore(dateOne,dateTwo);
+        return reservasCrudRepository.findAllByStartDateAfterAndStartDateBefore(dateOne,dateTwo);
     }
 
-    public static List<CountClient>getTopClient(){
+    public List<CountClient>getTopClient(){
         List<CountClient> resultado=new ArrayList<>();
 
-        List<Object[]> reporte=ReservasCrudRepository.countTotalReservasByClient();
+        List<Object[]> reporte=reservasCrudRepository.countTotalReservasByClient();
         for(int i=0; i<reporte.size();i++){
             Client cli=(Client) reporte.get(i)[0];
             Integer cantidad=(Integer) reporte.get(i)[1];

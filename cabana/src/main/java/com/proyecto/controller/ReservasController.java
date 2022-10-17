@@ -43,10 +43,11 @@ public class ReservasController {
 
 
 
-   @GetMapping("/report-clients")
+    @GetMapping("/report-clients")
     public List<CountClient> getReservationsReportClient(){
         return reservasService.getTopClient();
     }
+
 
     @GetMapping("/report-dates/{dateOne}/{dateTwo}")
     public List<Reservas> getDatesReport(@PathVariable("dateOne")String d1, @PathVariable("dateTwo") String d2){

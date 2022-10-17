@@ -11,9 +11,15 @@ public interface ReservasCrudRepository extends CrudRepository<Reservas,Integer>
 
     /*JPQL*/
     @Query("select c.client, COUNT(c.client) FROM Reservas AS c GROUP BY c.client ORDER BY COUNT(c.client) DESC")
-    public static List<Object[]>countTotalReservasByClient();
+    public static List<Object[]> countTotalReservasByClient() {
+        return null;
+    }
 
-    public static List<Reservas>findAllByStartDateAfterAndStartDateBefore(Date dateOne, Date dateTwo);
+    public static List<Reservas> findAllByStartDateAfterAndStartDateBefore(Date dateOne, Date dateTwo) {
+        return null;
+    }
 
-    public static List<Reservas>findAllByStatus(String status);
+    public static List<Reservas> findAllByStatus(String status) {
+        return null;
+    }
 }

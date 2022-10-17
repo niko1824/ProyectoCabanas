@@ -86,11 +86,11 @@ public class ReservasService {
         return flag;
     }
 
-    public List<CountClient>getTopClient(){
+    public static List<CountClient>getTopClient(){
         return ReservasRepository.getTopClient();
     }
 
-    public DescriptionAmount getStatus(){
+    public static DescriptionAmount getStatus(){
 
         List<Reservas> completed=ReservasRepository.getReservasByStatus("completed");
         List<Reservas> cancelled=ReservasRepository.getReservasByStatus("cancelled");
